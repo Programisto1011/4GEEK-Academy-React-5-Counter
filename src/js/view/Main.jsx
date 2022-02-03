@@ -14,14 +14,13 @@ const Main = () => {
 		setTimeout(() => {
 			clearInterval(interval);
 			alert("stop");
-		}, 55000);
+		}, 22000);
 	}, []);
 
-	const seconds10 = Math.floor({ seconds } / 10);
-	const seconds100 = Math.floor({ seconds } / 100);
-	const seconds1000 = Math.floor({ seconds } / 1000);
-
-	let items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+	const seconds1 = String(seconds % 10);
+	const seconds10 = String(Math.floor(seconds / 10));
+	const seconds100 = Math.floor(seconds / 100);
+	const seconds1000 = Math.floor(seconds / 1000);
 
 	return (
 		<div>
@@ -29,7 +28,7 @@ const Main = () => {
 				<Card number={seconds1000} />
 				<Card number={seconds100} />
 				<Card number={seconds10} />
-				<Card number={seconds} />
+				<Card number={seconds1} />
 			</div>
 		</div>
 	);
